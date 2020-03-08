@@ -35,13 +35,15 @@ const userSchema = new Schema({
 
 const User = mongoose.model('User',userSchema)
 
-const user1 = new User({
-    name:'Jone Doe',
-    age:20,
-    email:'john@gmail.com'
-})
+module.exports = User
 
-user1.save()
-.then(res => console.log(res))
-.catch(err => console.log(err))
+// const user1 = new User({
+//     name:'Jone Doe',
+//     age:20,
+//     email:'john@gmail.com'
+// })
+
+// user1.save()
+// .then(res => console.log(res))
+// .catch(err => console.log(err))
 
