@@ -1,6 +1,6 @@
 const mongoose =require('mongoose');
 const validator = require('validator')
-mongoose.connect('mongodb+srv://Anshuman:Tdoh96T5OAgDtaUI@cluster0-7nrdg.mongodb.net/test?retryWrites=true&w=majority',{useUnifiedTopology:true,useNewUrlParser:true})
+mongoose.connect('mongodb+srv://Anshuman:IJf6Q1bwkOJRx86X@cluster0-7nrdg.mongodb.net/test?retryWrites=true&w=majority',{useUnifiedTopology:true,useNewUrlParser:true})
 
 const Schema = mongoose.Schema
 
@@ -25,6 +25,11 @@ const userSchema = new Schema({
             if(!validator.isEmail(value))
                 throw new Error('It Shoul be an email')
         }
+    },
+    password:{
+        type:String,
+        required:true,
+        minlength:5
     }
 })
 
@@ -33,7 +38,7 @@ const User = mongoose.model('User',userSchema)
 const user1 = new User({
     name:'Jone Doe',
     age:20,
-    email:'johngmail.com'
+    email:'john@gmail.com'
 })
 
 user1.save()
